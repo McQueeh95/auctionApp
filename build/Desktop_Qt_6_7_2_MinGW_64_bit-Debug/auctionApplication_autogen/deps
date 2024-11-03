@@ -583,6 +583,10 @@ auctionApplication_autogen/timestamp: \
 	C:/Users/nezna/QtProjects/auctionApplication/lottablemodel.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/lottablemodel.h \
 	C:/Users/nezna/QtProjects/auctionApplication/main.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/participator.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/participator.h \
+	C:/Users/nezna/QtProjects/auctionApplication/participatorform.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/participatorform.h \
 	C:/Users/nezna/QtProjects/auctionApplication/registrationquery.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/registrationquery.h \
 	C:/Users/nezna/QtProjects/auctionApplication/seller.cpp \
@@ -599,9 +603,10 @@ auctionApplication_autogen/timestamp: \
 	C:/Users/nezna/QtProjects/auctionApplication/uiquery.h \
 	C:/Users/nezna/QtProjects/auctionApplication/widget.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/widget.h \
-	C:/Users/nezna/QtProjects/auctionApplication/windowController.h \
+	C:/Users/nezna/QtProjects/auctionApplication/windowcontroller.h \
 	C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/form.ui \
+	C:/Users/nezna/QtProjects/auctionApplication/participatorform.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/sellerform.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/sellerslots.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/signup.ui \

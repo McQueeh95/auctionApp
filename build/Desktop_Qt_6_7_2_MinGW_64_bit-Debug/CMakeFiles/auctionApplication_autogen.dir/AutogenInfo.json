@@ -359,6 +359,18 @@
 			null
 		],
 		[
+			"C:/Users/nezna/QtProjects/auctionApplication/participator.h",
+			"MU",
+			"EWIEGA46WW/moc_participator.cpp",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/participatorform.h",
+			"MU",
+			"EWIEGA46WW/moc_participatorform.cpp",
+			null
+		],
+		[
 			"C:/Users/nezna/QtProjects/auctionApplication/registrationquery.h",
 			"MU",
 			"EWIEGA46WW/moc_registrationquery.cpp",
@@ -407,9 +419,9 @@
 			null
 		],
 		[
-			"C:/Users/nezna/QtProjects/auctionApplication/windowController.h",
+			"C:/Users/nezna/QtProjects/auctionApplication/windowcontroller.h",
 			"MU",
-			"EWIEGA46WW/moc_windowController.cpp",
+			"EWIEGA46WW/moc_windowcontroller.cpp",
 			null
 		]
 	],
@@ -515,6 +527,16 @@
 			null
 		],
 		[ "C:/Users/nezna/QtProjects/auctionApplication/main.cpp", "MU", null ],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/participator.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/participatorform.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/nezna/QtProjects/auctionApplication/registrationquery.cpp",
 			"MU",

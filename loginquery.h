@@ -3,12 +3,13 @@
 #include <QSqlQuery>
 #include "seller.h"
 #include "admin.h"
+#include "participator.h"
 
 #include "databasemanager.h"
 
 enum userType{
     admin = 1,
-    user = 2,
+    participator = 2,
     seller = 3
 };
 
@@ -18,7 +19,7 @@ private:
     LoginQuery();
 public:
     static std::pair<int, Admin> adminLogin(QString login, QString password);
-    static std::pair<int, int> userLogin(QString login, QString password);
+    static std::pair<int, Participator> participatorLogin(QString login, QString password);
     static std::pair<int, Seller> sellerLogin(QString login, QString password);
 
 };

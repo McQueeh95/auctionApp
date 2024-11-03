@@ -21,21 +21,26 @@ std::pair<int, Admin> LoginQuery::adminLogin(QString login, QString password){
 }
 
 
-std::pair<int, int> LoginQuery::userLogin(QString login, QString password)
+std::pair<int, Participator> LoginQuery::participatorLogin(QString login, QString password)
 {
     QSqlDatabase db = DataBaseManager::databaseConnection();
     QSqlQuery query;
-    query.prepare("SELECT participator_id FROM participator WHERE email = :login AND password = :password");
+    query.prepare("SELECT participator_id, email, name, surname FROM participator WHERE email = :login AND password = :password");
     query.bindValue(":login", login);
     query.bindValue(":password", password);
-    int result{};
-    query.exec();
-    while(query.next()){
-        result = query.value(0).toInt();
+    Participator participator{};
+    if(query.exec()){
+        while(query.next()){
+            participator.setParticipatorId(query.value(0).toInt());
+            participator.setEmail(query.value(1).toString());
+            participator.setName(query.value(2).toString());
+            participator.setSurname(query.value(3).toString());
+        }
+        if(participator.getParticipatorId() > 0){
+            return std::pair{2, participator};
+        }
     }
-    if(result > 0)
-        return std::pair<int, int>(2, result);
-    return std::pair<int, int>{};
+    return std::pair<int, Participator>{};
 }
 
 std::pair<int, Seller> LoginQuery::sellerLogin(QString login, QString password){

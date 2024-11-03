@@ -11,7 +11,7 @@
 #include "loginquery.h"
 #include "sellerform.h"
 #include "seller.h"
-#include <functional>
+#include "participatorform.h"
 #include "WindowController.h"
 
 Widget::Widget(QWidget *parent)
@@ -40,10 +40,14 @@ void Widget::on_loginButton_clicked()
         WindowContoller::instance().hideMain();
         adminWindow->show();
     }
-    else if(LoginQuery::userLogin(login, password).first == user){
-        Form* adminWindow = new Form();
+    else if(LoginQuery::participatorLogin(login, password).first == participator){
+        ParticipatorForm* participatorWindow = new ParticipatorForm();
+        Participator participator = LoginQuery::participatorLogin(login, password).second;
+        participatorWindow->setParticipator(participator);
+        participatorWindow->setAttribute(Qt::WA_DeleteOnClose);
+        participatorWindow->show();
+        participatorWindow->setParticipatorInfo();
         WindowContoller::instance().hideMain();
-        adminWindow->show();
     }
     else if(LoginQuery::sellerLogin(login, password).first == seller){
         SellerForm* sellerWindow = new SellerForm();
