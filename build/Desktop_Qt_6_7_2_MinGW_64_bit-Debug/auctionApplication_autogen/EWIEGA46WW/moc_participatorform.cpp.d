@@ -1,10 +1,12 @@
 C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/auctionApplication_autogen/EWIEGA46WW/moc_participatorform.cpp: C:/Users/nezna/QtProjects/auctionApplication/participatorform.h \
   C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/auctionApplication_autogen/moc_predefs.h \
+  C:/Qt-framework/6.7.2/mingw_64/include/QtCore/QAbstractTableModel \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/QString \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/q20functional.h \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/q20memory.h \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/q20type_traits.h \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/q23utility.h \
+  C:/Qt-framework/6.7.2/mingw_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt-framework/6.7.2/mingw_64/include/QtCore/qarraydata.h \
@@ -348,4 +350,6 @@ C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit
   C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/nezna/QtProjects/auctionApplication/auction.h \
+  C:/Users/nezna/QtProjects/auctionApplication/auctiontablemodel.h \
   C:/Users/nezna/QtProjects/auctionApplication/participator.h

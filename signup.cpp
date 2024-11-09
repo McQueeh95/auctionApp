@@ -118,10 +118,10 @@ void SignUp::on_signUpButton_clicked()
         else{
             showMessage(QMessageBox::Information, "Success!");
             this->close();
+
         }
     }
-
-
+    WindowContoller::instance().showMain();
 }
 
 int SignUp::fieldValidator(const QVector<QString> &fields)

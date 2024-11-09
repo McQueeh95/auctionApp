@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "participator.h"
+#include "auctiontablemodel.h"
 
 namespace Ui {
 class ParticipatorForm;
@@ -18,10 +19,15 @@ public:
     void setParticipator(const Participator &participator);
     Participator getParticipator() const;
     void setParticipatorInfo();
+    void createModel();
+
+private slots:
+    void on_logOutButton_clicked();
 
 private:
     Ui::ParticipatorForm *ui;
     Participator participator;
+    AuctionTableModel *model;
 };
 
 #endif // PARTICIPATORFORM_H

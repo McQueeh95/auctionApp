@@ -323,6 +323,24 @@
 			null
 		],
 		[
+			"C:/Users/nezna/QtProjects/auctionApplication/auction.h",
+			"MU",
+			"EWIEGA46WW/moc_auction.cpp",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/auctionquery.h",
+			"MU",
+			"EWIEGA46WW/moc_auctionquery.cpp",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/auctiontablemodel.h",
+			"MU",
+			"EWIEGA46WW/moc_auctiontablemodel.cpp",
+			null
+		],
+		[
 			"C:/Users/nezna/QtProjects/auctionApplication/databasemanager.h",
 			"MU",
 			"EWIEGA46WW/moc_databasemanager.cpp",
@@ -504,6 +522,21 @@
 			null
 		],
 		[ "C:/Users/nezna/QtProjects/auctionApplication/admin.cpp", "MU", null ],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/auction.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/auctionquery.cpp",
+			"MU",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/auctiontablemodel.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/nezna/QtProjects/auctionApplication/databasemanager.cpp",
 			"MU",

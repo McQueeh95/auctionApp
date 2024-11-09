@@ -3,6 +3,7 @@
 #include "addlotdialog.h"
 #include "widget.h"
 #include "sellerslots.h"
+#include "windowcontroller.h"
 
 SellerForm::SellerForm(QWidget *parent)
     : QWidget(parent)
@@ -32,9 +33,8 @@ void SellerForm::on_addLotButton_clicked()
 
 void SellerForm::on_logOutButton_clicked()
 {
-    Widget* login = new Widget();
+    WindowContoller::instance().showMain();
     this->close();
-    login->show();
 }
 
 

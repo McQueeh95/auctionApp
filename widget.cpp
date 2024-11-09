@@ -37,16 +37,21 @@ void Widget::on_loginButton_clicked()
     if(LoginQuery::adminLogin(login, password).first == admin){
         Form* adminWindow = new Form();
         adminWindow->setAttribute(Qt::WA_DeleteOnClose);
-        WindowContoller::instance().hideMain();
         adminWindow->show();
+        this->ui->loginLineEdit->clear();
+        this->ui->passwordLineEdit->clear();
+        WindowContoller::instance().hideMain();
     }
     else if(LoginQuery::participatorLogin(login, password).first == participator){
         ParticipatorForm* participatorWindow = new ParticipatorForm();
         Participator participator = LoginQuery::participatorLogin(login, password).second;
         participatorWindow->setParticipator(participator);
-        participatorWindow->setAttribute(Qt::WA_DeleteOnClose);
-        participatorWindow->show();
         participatorWindow->setParticipatorInfo();
+        participatorWindow->setAttribute(Qt::WA_DeleteOnClose);
+        participatorWindow->createModel();
+        participatorWindow->show();
+        this->ui->loginLineEdit->clear();
+        this->ui->passwordLineEdit->clear();
         WindowContoller::instance().hideMain();
     }
     else if(LoginQuery::sellerLogin(login, password).first == seller){
@@ -56,6 +61,8 @@ void Widget::on_loginButton_clicked()
         sellerWindow->setSellerInfo();
         sellerWindow->setAttribute(Qt::WA_DeleteOnClose);
         sellerWindow->show();
+        this->ui->loginLineEdit->clear();
+        this->ui->passwordLineEdit->clear();
         WindowContoller::instance().hideMain();
     }
     else{
@@ -63,7 +70,6 @@ void Widget::on_loginButton_clicked()
         msgBox.setIcon(QMessageBox::Critical);
         msgBox.setText("Wrong login or password");
         msgBox.exec();
-
     }
 
 }

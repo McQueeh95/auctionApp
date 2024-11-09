@@ -565,6 +565,12 @@ auctionApplication_autogen/timestamp: \
 	C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.h \
 	C:/Users/nezna/QtProjects/auctionApplication/admin.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/admin.h \
+	C:/Users/nezna/QtProjects/auctionApplication/auction.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/auction.h \
+	C:/Users/nezna/QtProjects/auctionApplication/auctionquery.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/auctionquery.h \
+	C:/Users/nezna/QtProjects/auctionApplication/auctiontablemodel.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/auctiontablemodel.h \
 	C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/.qtc/package-manager/auto-setup.cmake \
 	C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake \
 	C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \

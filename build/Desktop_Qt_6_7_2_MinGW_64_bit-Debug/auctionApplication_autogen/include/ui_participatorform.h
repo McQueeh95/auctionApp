@@ -11,7 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableView>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -19,16 +23,33 @@ QT_BEGIN_NAMESPACE
 class Ui_ParticipatorForm
 {
 public:
+    QVBoxLayout *verticalLayout;
     QLabel *label;
+    QTableView *auctionTable;
+    QPushButton *logOutButton;
 
     void setupUi(QWidget *ParticipatorForm)
     {
         if (ParticipatorForm->objectName().isEmpty())
             ParticipatorForm->setObjectName("ParticipatorForm");
-        ParticipatorForm->resize(528, 440);
+        ParticipatorForm->resize(720, 618);
+        verticalLayout = new QVBoxLayout(ParticipatorForm);
+        verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(ParticipatorForm);
         label->setObjectName("label");
-        label->setGeometry(QRect(298, 80, 101, 21));
+
+        verticalLayout->addWidget(label);
+
+        auctionTable = new QTableView(ParticipatorForm);
+        auctionTable->setObjectName("auctionTable");
+
+        verticalLayout->addWidget(auctionTable);
+
+        logOutButton = new QPushButton(ParticipatorForm);
+        logOutButton->setObjectName("logOutButton");
+
+        verticalLayout->addWidget(logOutButton);
+
 
         retranslateUi(ParticipatorForm);
 
@@ -39,6 +60,7 @@ public:
     {
         ParticipatorForm->setWindowTitle(QCoreApplication::translate("ParticipatorForm", "Form", nullptr));
         label->setText(QCoreApplication::translate("ParticipatorForm", "Welcome ", nullptr));
+        logOutButton->setText(QCoreApplication::translate("ParticipatorForm", "Log out", nullptr));
     } // retranslateUi
 
 };

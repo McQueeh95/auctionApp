@@ -40,7 +40,7 @@ void SellersLots::setSeller(const Seller seller){
 
 void SellersLots::createModel(){
     model = new lotTableModel(LotQuery::getLotsSellerQuery(this->getSeller()), this);
-      ui->tableView->setModel(model);
+    ui->tableView->setModel(model);
 }
 
 Seller SellersLots::getSeller() const{
