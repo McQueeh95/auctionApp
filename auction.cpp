@@ -2,8 +2,8 @@
 
 Auction::Auction() {}
 
-Auction::Auction(int auctionId, QString startTime, QString endTime, int announcerId, int auctionTypeId):
-    auctionId{auctionId}, startTime{startTime}, endTime{endTime}, announcerId{announcerId}, auctionTypeId{auctionTypeId}
+Auction::Auction(int auctionId, QString startTime, QString endTime, QString announcer, QString auctionType):
+    auctionId{auctionId}, startTime{startTime}, endTime{endTime}, announcer{announcer}, auctionType{auctionType}
 {
 }
 
@@ -22,14 +22,14 @@ QString Auction::getEndTime() const
     return endTime;
 }
 
-int Auction::getAnnouncerId() const
+QString Auction::getAnnouncer() const
 {
-    return announcerId;
+    return announcer;
 }
 
-int Auction::getAuctionTypeId() const
+QString Auction::getAuctionType() const
 {
-    return auctionTypeId;
+    return auctionType;
 }
 
 void Auction::setAuctionId(const int auctionId)
@@ -47,14 +47,14 @@ void Auction::setEndTime(const QString endTime)
     this->endTime = endTime;
 }
 
-void Auction::setAnnouncerId(const int announcerId)
+void Auction::setAnnouncer(const QString announcer)
 {
-    this->announcerId = announcerId;
+    this->announcer = announcer;
 }
 
-void Auction::setAuctionTypeId(const int auctionTypeId)
+void Auction::setAuctionType(const QString auctionType)
 {
-    this->auctionTypeId = auctionTypeId;
+    this->auctionType = auctionType;
 }
 
 

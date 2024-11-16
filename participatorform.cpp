@@ -3,6 +3,9 @@
 #include "auctionquery.h"
 #include "QStandardItemModel"
 #include "windowcontroller.h"
+#include "sellerslots.h"
+#include "lotquery.h"
+#include "lottablemodel.h"
 
 ParticipatorForm::ParticipatorForm(QWidget *parent)
     : QWidget(parent)
@@ -34,6 +37,8 @@ void ParticipatorForm::setParticipatorInfo()
 void ParticipatorForm::createModel()
 {
     model = new AuctionTableModel(AuctionQuery::getAuctionQuery(), this);
+    ui->auctionTable->setSelectionMode(QAbstractItemView::SelectionMode::SingleSelection);
+    ui->auctionTable->setSelectionBehavior(QAbstractItemView::SelectionBehavior::SelectRows);
     ui->auctionTable->setModel(model);
 }
 
@@ -42,5 +47,20 @@ void ParticipatorForm::on_logOutButton_clicked()
 {
     this->close();
     WindowContoller::instance().showMain();
+}
+
+
+void ParticipatorForm::on_showLotsButtin_clicked()
+{
+    SellersLots *lotsForm = new SellersLots();
+    QVector<Auction> auctions = AuctionQuery::getAuctionQuery();
+    Auction selctedAuction{};
+    auto index = this->ui->auctionTable->selectionModel()->currentIndex();
+    int number = index.row();
+    lotsForm->createModelAuctions(auctions.at(number));
+    qDebug() << auctions.at(number).getAuctionId();
+    lotsForm->setAttribute(Qt::WA_DeleteOnClose);
+    lotsForm->show();
+
 }
 

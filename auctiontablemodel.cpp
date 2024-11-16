@@ -25,14 +25,15 @@ QVariant AuctionTableModel::data(const QModelIndex &index, int role) const{
     if(role == Qt::DisplayRole){
         const Auction& auction = mAuctions.at(index.row());
         if(index.column() == 0){
-            const QVector<std::pair<int, QString>> types = AuctionQuery::auctionTypes();
+            return auction.getAuctionType();
+            /*const QVector<std::pair<int, QString>> types = AuctionQuery::auctionTypes();
             auto it = std::find_if(types.begin(), types.end(), [typeId = auction.getAuctionTypeId()](const std::pair<int, QString> &type){
                 return type.first == typeId;
             });
             if(it != types.end()){
                 return it->second;
                 }
-            return QVariant();
+            return QVariant();*/
         }
         if(index.column() == 1){
             return auction.getStartTime();
@@ -41,14 +42,13 @@ QVariant AuctionTableModel::data(const QModelIndex &index, int role) const{
             return auction.getEndTime();
         }
         if(index.column() == 3){
-            const QVector<std::pair<int, QString>> announcers = AuctionQuery::getAnnouncers();
+            return auction.getAnnouncer();
+            /*const QVector<std::pair<int, QString>> announcers = AuctionQuery::getAnnouncers();
             auto it = std::find_if(announcers.begin(), announcers.end(), [announcerId = auction.getAnnouncerId()](const std::pair<int, QString> &announcer){
                 return announcer.first == announcerId;
             });
             if(it != announcers.end()){
-                return it->second;
-            }
-            return QVariant();
+                return it->second;*/
         }
     }
     return QVariant();

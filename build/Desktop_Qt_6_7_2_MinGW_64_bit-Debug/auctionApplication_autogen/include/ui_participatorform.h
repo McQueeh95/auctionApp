@@ -26,6 +26,7 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QTableView *auctionTable;
+    QPushButton *showLotsButtin;
     QPushButton *logOutButton;
 
     void setupUi(QWidget *ParticipatorForm)
@@ -45,6 +46,11 @@ public:
 
         verticalLayout->addWidget(auctionTable);
 
+        showLotsButtin = new QPushButton(ParticipatorForm);
+        showLotsButtin->setObjectName("showLotsButtin");
+
+        verticalLayout->addWidget(showLotsButtin);
+
         logOutButton = new QPushButton(ParticipatorForm);
         logOutButton->setObjectName("logOutButton");
 
@@ -60,6 +66,7 @@ public:
     {
         ParticipatorForm->setWindowTitle(QCoreApplication::translate("ParticipatorForm", "Form", nullptr));
         label->setText(QCoreApplication::translate("ParticipatorForm", "Welcome ", nullptr));
+        showLotsButtin->setText(QCoreApplication::translate("ParticipatorForm", "Show lots", nullptr));
         logOutButton->setText(QCoreApplication::translate("ParticipatorForm", "Log out", nullptr));
     } // retranslateUi
 

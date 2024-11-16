@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QTableView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -22,6 +23,7 @@ class Ui_SellersLots
 {
 public:
     QVBoxLayout *verticalLayout;
+    QLabel *infoLabel;
     QTableView *tableView;
 
     void setupUi(QWidget *SellersLots)
@@ -31,6 +33,11 @@ public:
         SellersLots->resize(786, 716);
         verticalLayout = new QVBoxLayout(SellersLots);
         verticalLayout->setObjectName("verticalLayout");
+        infoLabel = new QLabel(SellersLots);
+        infoLabel->setObjectName("infoLabel");
+
+        verticalLayout->addWidget(infoLabel);
+
         tableView = new QTableView(SellersLots);
         tableView->setObjectName("tableView");
 
@@ -45,6 +52,7 @@ public:
     void retranslateUi(QWidget *SellersLots)
     {
         SellersLots->setWindowTitle(QCoreApplication::translate("SellersLots", "Form", nullptr));
+        infoLabel->setText(QCoreApplication::translate("SellersLots", "TextLabel", nullptr));
     } // retranslateUi
 
 };

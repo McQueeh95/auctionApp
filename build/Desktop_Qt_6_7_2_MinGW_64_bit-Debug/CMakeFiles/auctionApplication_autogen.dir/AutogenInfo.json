@@ -347,6 +347,18 @@
 			null
 		],
 		[
+			"C:/Users/nezna/QtProjects/auctionApplication/expert.h",
+			"MU",
+			"EWIEGA46WW/moc_expert.cpp",
+			null
+		],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/expertform.h",
+			"MU",
+			"EWIEGA46WW/moc_expertform.cpp",
+			null
+		],
+		[
 			"C:/Users/nezna/QtProjects/auctionApplication/form.h",
 			"MU",
 			"EWIEGA46WW/moc_form.cpp",
@@ -539,6 +551,12 @@
 		],
 		[
 			"C:/Users/nezna/QtProjects/auctionApplication/databasemanager.cpp",
+			"MU",
+			null
+		],
+		[ "C:/Users/nezna/QtProjects/auctionApplication/expert.cpp", "MU", null ],
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/expertform.cpp",
 			"MU",
 			null
 		],

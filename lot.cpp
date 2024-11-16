@@ -12,7 +12,7 @@ int Lot::getYear() const
     return year;
 }
 
-int Lot::getType() const{
+QString Lot::getType() const{
     return type;
 }
 
@@ -24,7 +24,11 @@ QString Lot::getDescription() const{
     return description;
 }
 
-Lot::Lot(QString name, int year, int type, float desirePrice, QString description, int sellerId):
+int Lot::getSellerId() const{
+    return sellerId;
+}
+
+Lot::Lot(QString name, int year, QString type, float desirePrice, QString description, int sellerId):
     name{name}, year{year}, type{type}, desirePrice(desirePrice), description{description}, sellerId(sellerId)
 {
 
@@ -38,7 +42,7 @@ void Lot::setName(QString name){
     this->name = name;
 }
 
-void Lot::setType(int type){
+void Lot::setType(QString type){
     this->type = type;
 }
 void Lot::setYear(int year){

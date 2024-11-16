@@ -1,14 +1,19 @@
 #include "lottablemodel.h"
 
 lotTableModel::lotTableModel(const QVector<Lot> &lots, QObject *parent)
-    : QAbstractTableModel{parent}, m_lots{lots}
-{}
+    : QAbstractTableModel{parent}, mLots{lots}
+{
+    qDebug() << "LotTableModel COnstructor";
+    for(const auto& l: lots){
+        qDebug() << l.getName();
+    }
+}
 
 
 int lotTableModel::rowCount(const QModelIndex &parent) const
 {
     if(!parent.isValid())
-        return m_lots.size();
+        return mLots.size();
     return 0;
 }
 
@@ -22,7 +27,7 @@ int lotTableModel::columnCount(const QModelIndex &parent) const
 QVariant lotTableModel::data(const QModelIndex &index, int role) const
 {
     if(role == Qt::DisplayRole){
-        const Lot& lot = m_lots.at(index.row());
+        const Lot& lot = mLots.at(index.row());
         if(index.column() == 0)
             return lot.getName();
         if(index.column() == 1)
@@ -30,16 +35,18 @@ QVariant lotTableModel::data(const QModelIndex &index, int role) const
         if(index.column() == 2)
             return lot.getDesirePrice();
         if(index.column() == 3){
-            QList<std::pair<int, QString>> types = UiQuery::getLotTypes();
+            return lot.getType();
+            /*QList<std::pair<int, QString>> types = UiQuery::getLotTypes();
             auto it = std::find_if(types.begin(), types.end(), [typeId = lot.getType()](const std::pair<int, QString>& type){
                 return type.first == typeId;
             });
             if(it != types.end()){
                     return it->second;
                 }
-            return QVariant();}
+            return QVariant();*/
+        }
         if(index.column() == 4)
-            return m_lots.at(index.row()).getDescription();
+            return mLots.at(index.row()).getDescription();
     }
     return QVariant();
 }

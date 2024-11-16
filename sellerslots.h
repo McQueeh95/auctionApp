@@ -21,7 +21,7 @@ public:
     void setSeller(const Seller seller);
     Seller getSeller() const;
     void createModel();
-
+    void createModelAuctions(const Auction &auction);
 private:
     Ui::SellersLots *ui;
     lotTableModel *model;

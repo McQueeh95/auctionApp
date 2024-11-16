@@ -350,6 +350,7 @@ C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit
   C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/time.h \
   C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
+  C:/Users/nezna/QtProjects/auctionApplication/auction.h \
   C:/Users/nezna/QtProjects/auctionApplication/lot.h \
   C:/Users/nezna/QtProjects/auctionApplication/lotquery.h \
   C:/Users/nezna/QtProjects/auctionApplication/lottablemodel.h \

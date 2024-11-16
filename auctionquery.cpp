@@ -11,16 +11,22 @@ QVector<Auction> AuctionQuery::getAuctionQuery()
     QDateTime now = QDateTime::currentDateTime();
     QSqlDatabase db = DataBaseManager::databaseConnection();
     QSqlQuery query;
-    query.prepare("SELECT auction_id, start_time, end_time, announcer_id, auction_type_id  FROM auction WHERE start_time > :time_now");
+    query.prepare("SELECT a.auction_id, a.start_time, a.end_time, ann.name, ann.surname, at.auction_type FROM auction AS a "
+                  "INNER JOIN announcer AS ann ON ann.announcer_id = a.announcer_id "
+                  "INNER JOIN auction_type AS at ON at.auction_type_id = a.auction_type_id "
+                  "WHERE start_time > :time_now");
     query.bindValue(":time_now", now);
     query.exec();
     QVector<Auction> auctions{};
     while(query.next()){
-        Auction auction{query.value(0).toInt(), query.value(1).toString(), query.value(2).toString(), query.value(3).toInt(), query.value(4).toInt()};
+        QString announcerName = query.value(3).toString()+" "+query.value(4).toString();
+        Auction auction{query.value(0).toInt(), query.value(1).toString(), query.value(2).toString(), announcerName, query.value(5).toString()};
         QString sTime = auction.getStartTime();
         QString eTime = auction.getEndTime();
         eTime.replace('T', ' ');
         sTime.replace('T', ' ');
+        eTime.chop(7);
+        sTime.chop(7);
         auction.setStartTime(sTime);
         auction.setEndTime(eTime);
         auctions.push_back(auction);

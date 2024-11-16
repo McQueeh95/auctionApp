@@ -7,21 +7,21 @@ private:
     int auctionId;
     QString startTime;
     QString endTime;
-    int announcerId;
-    int auctionTypeId;
+    QString announcer;
+    QString auctionType;
 public:
     Auction();
-    Auction(int auctionId, QString startTime, QString endTime, int announcerId, int auctionTypeId);
+    Auction(int auctionId, QString startTime, QString endTime, QString announcer, QString auctionType);
     int getAuctionId() const;
     QString getStartTime() const;
     QString getEndTime() const;
-    int getAnnouncerId() const;
-    int getAuctionTypeId() const;
+    QString getAnnouncer() const;
+    QString getAuctionType() const;
     void setAuctionId(const int auctionId);
     void setStartTime(const QString startTime);
     void setEndTime(const QString endTime);
-    void setAnnouncerId(const int announcerId);
-    void setAuctionTypeId(const int auctionTypeId);
+    void setAnnouncer(const QString announcer);
+    void setAuctionType(const QString auctionType);
 
 
 };

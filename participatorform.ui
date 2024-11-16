@@ -25,6 +25,13 @@
     <widget class="QTableView" name="auctionTable"/>
    </item>
    <item>
+    <widget class="QPushButton" name="showLotsButtin">
+     <property name="text">
+      <string>Show lots</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QPushButton" name="logOutButton">
      <property name="text">
       <string>Log out</string>

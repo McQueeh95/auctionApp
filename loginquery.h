@@ -4,13 +4,15 @@
 #include "seller.h"
 #include "admin.h"
 #include "participator.h"
+#include "expert.h"
 
 #include "databasemanager.h"
 
 enum userType{
     admin = 1,
     participator = 2,
-    seller = 3
+    seller = 3,
+    expert = 4
 };
 
 class LoginQuery
@@ -21,6 +23,7 @@ public:
     static std::pair<int, Admin> adminLogin(QString login, QString password);
     static std::pair<int, Participator> participatorLogin(QString login, QString password);
     static std::pair<int, Seller> sellerLogin(QString login, QString password);
+    static std::pair<int, Expert> expertLogin(QString login, QString password);
 
 };
 

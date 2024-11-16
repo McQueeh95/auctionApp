@@ -578,6 +578,10 @@ auctionApplication_autogen/timestamp: \
 	C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/auctionApplication_autogen/moc_predefs.h \
 	C:/Users/nezna/QtProjects/auctionApplication/databasemanager.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/databasemanager.h \
+	C:/Users/nezna/QtProjects/auctionApplication/expert.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/expert.h \
+	C:/Users/nezna/QtProjects/auctionApplication/expertform.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/expertform.h \
 	C:/Users/nezna/QtProjects/auctionApplication/form.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/form.h \
 	C:/Users/nezna/QtProjects/auctionApplication/loginquery.cpp \
@@ -611,6 +615,7 @@ auctionApplication_autogen/timestamp: \
 	C:/Users/nezna/QtProjects/auctionApplication/widget.h \
 	C:/Users/nezna/QtProjects/auctionApplication/windowcontroller.h \
 	C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.ui \
+	C:/Users/nezna/QtProjects/auctionApplication/expertform.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/form.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/participatorform.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/sellerform.ui \

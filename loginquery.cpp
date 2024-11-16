@@ -66,3 +66,26 @@ std::pair<int, Seller> LoginQuery::sellerLogin(QString login, QString password){
     return std::pair<int, Seller>{};
 }
 
+std::pair<int, Expert> LoginQuery::expertLogin(QString login, QString password)
+{
+    QSqlDatabase db = DataBaseManager::databaseConnection();
+    QSqlQuery query;
+    query.prepare("SELECT expert_id, email, name, surname, experience, phone_number FROM expert WHERE email = :login AND password = :password");
+    query.bindValue(":login", login);
+    query.bindValue(":password", password);
+    query.exec();
+    Expert expert{};
+    while(query.next()){
+        expert.setExpertId(query.value(0).toInt());
+        expert.setEmail(query.value(1).toString());
+        expert.setName(query.value(2).toString());
+        expert.setSurname(query.value(3).toString());
+        expert.setExperience(query.value(4).toInt());
+        expert.setPhoneNumber(query.value(5).toString());
+    }
+    if(expert.getExpertId() > 0){
+        return std::pair{4, expert};
+    }
+    return std::pair<int, Expert>{};
+}
+

@@ -27,7 +27,6 @@ void Form::on_logOutButton_clicked()
 void Form::on_addLotButton_clicked()
 {
     AddLotDialog* addLot = new AddLotDialog();
-    addLot->setFocus();
     addLot->setAttribute(Qt::WA_DeleteOnClose);
     addLot->show();
 }

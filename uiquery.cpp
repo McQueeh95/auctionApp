@@ -23,7 +23,9 @@ QList<Lot> UiQuery::loadSellersLots(int sellerId)
     QSqlDatabase db = DataBaseManager::databaseConnection();
     QSqlQuery query;
     QList<Lot> lots{};
-    query.prepare("SELECT name, year, desire_price, type, description FROM lot WHERE seller_id = :seller_id");
+    query.prepare("SELECT name, year, desire_price, type, description FROM lot "
+                  "INNER JOIN lot_type AS lt ON lt.lot_type_id = lot.lot_type_id "
+                  "WHERE seller_id = :seller_id");
     query.bindValue(":seller_id", sellerId);
     query.exec();
     Lot lot{};
@@ -31,7 +33,7 @@ QList<Lot> UiQuery::loadSellersLots(int sellerId)
         lot.setName(query.value(0).toString());
         lot.setYear(query.value(1).toInt());
         lot.setDesirePrice(query.value(2).toInt());
-        lot.setType(query.value(3).toInt());
+        lot.setType(query.value(3).toString());
         lot.setDescription(query.value(4).toString());
         lots.append(lot);
     }

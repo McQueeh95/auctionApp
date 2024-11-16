@@ -12,6 +12,7 @@
 #include "sellerform.h"
 #include "seller.h"
 #include "participatorform.h"
+#include "expertform.h"
 #include "WindowController.h"
 
 Widget::Widget(QWidget *parent)
@@ -50,8 +51,7 @@ void Widget::on_loginButton_clicked()
         participatorWindow->setAttribute(Qt::WA_DeleteOnClose);
         participatorWindow->createModel();
         participatorWindow->show();
-        this->ui->loginLineEdit->clear();
-        this->ui->passwordLineEdit->clear();
+        this->clearLineEdit();
         WindowContoller::instance().hideMain();
     }
     else if(LoginQuery::sellerLogin(login, password).first == seller){
@@ -61,8 +61,17 @@ void Widget::on_loginButton_clicked()
         sellerWindow->setSellerInfo();
         sellerWindow->setAttribute(Qt::WA_DeleteOnClose);
         sellerWindow->show();
-        this->ui->loginLineEdit->clear();
-        this->ui->passwordLineEdit->clear();
+        this->clearLineEdit();
+        WindowContoller::instance().hideMain();
+    }
+    else if(LoginQuery::expertLogin(login, password).first == expert){
+        ExpertForm* expertWindow = new ExpertForm();
+        Expert expert = LoginQuery::expertLogin(login, password).second;
+        expertWindow->setExpert(expert);
+        expertWindow->setExpertInfo();
+        expertWindow->setAttribute(Qt::WA_DeleteOnClose);
+        expertWindow->show();
+        this->clearLineEdit();
         WindowContoller::instance().hideMain();
     }
     else{
@@ -74,6 +83,10 @@ void Widget::on_loginButton_clicked()
 
 }
 
+void Widget::clearLineEdit(){
+    this->ui->loginLineEdit->clear();
+    this->ui->passwordLineEdit->clear();
+}
 
 
 void Widget::on_signUpButton_clicked()

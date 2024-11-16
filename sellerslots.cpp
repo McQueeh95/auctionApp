@@ -40,8 +40,18 @@ void SellersLots::setSeller(const Seller seller){
 
 void SellersLots::createModel(){
     model = new lotTableModel(LotQuery::getLotsSellerQuery(this->getSeller()), this);
+    ui->infoLabel->hide();
     ui->tableView->setModel(model);
 }
+
+void SellersLots::createModelAuctions(const Auction &auction){
+    QVector<Lot> lots{LotQuery::getLotsAuctionQuery(auction)};
+    model = new lotTableModel(LotQuery::getLotsAuctionQuery(auction), this);
+    QString info = "Auction time: " + auction.getStartTime() + " - " + auction.getEndTime() + " \nAnnouncer: " + auction.getAnnouncer();
+    ui->infoLabel->setText(info);
+    ui->tableView->setModel(model);
+}
+
 
 Seller SellersLots::getSeller() const{
     return seller;
