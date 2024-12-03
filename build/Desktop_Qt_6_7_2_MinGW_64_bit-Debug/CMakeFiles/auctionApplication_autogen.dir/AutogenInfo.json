@@ -311,6 +311,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/nezna/QtProjects/auctionApplication/addappraisalform.h",
+			"MU",
+			"EWIEGA46WW/moc_addappraisalform.cpp",
+			null
+		],
+		[
 			"C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.h",
 			"MU",
 			"EWIEGA46WW/moc_addlotdialog.cpp",
@@ -528,6 +534,11 @@
 	"SETTINGS_FILE" : "C:/Users/nezna/QtProjects/auctionApplication/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/auctionApplication_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/nezna/QtProjects/auctionApplication/addappraisalform.cpp",
+			"MU",
+			null
+		],
 		[
 			"C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.cpp",
 			"MU",

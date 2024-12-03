@@ -15,6 +15,8 @@ private:
 public:
     Lot();
     Lot(QString name, int year, QString type, float desirePrice, QString description, int sellerId);
+    Lot (QString name, int year, QString type, QString description, int sellerId);
+    int getId() const;
     QString getName() const;
     int getYear() const;
     QString getType() const;

@@ -42,7 +42,6 @@ void SellerForm::on_yourLotsButton_clicked()
 {
     SellersLots* sellersLots = new SellersLots();
     sellersLots->setSeller(this->seller);
-    qDebug() << sellersLots->getSeller().getSellerId();
 
     //sellersLots->loadLots();
     sellersLots->createModel();

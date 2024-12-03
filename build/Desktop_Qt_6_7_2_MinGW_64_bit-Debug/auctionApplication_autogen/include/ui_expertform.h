@@ -11,8 +11,11 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTableView>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,20 +23,39 @@ QT_BEGIN_NAMESPACE
 class Ui_ExpertForm
 {
 public:
+    QVBoxLayout *verticalLayout;
     QLabel *expertInfoLabel;
+    QTableView *lotTable;
+    QPushButton *addAppraisalButton;
     QPushButton *logOutButton;
 
     void setupUi(QWidget *ExpertForm)
     {
         if (ExpertForm->objectName().isEmpty())
             ExpertForm->setObjectName("ExpertForm");
-        ExpertForm->resize(502, 419);
+        ExpertForm->resize(545, 517);
+        verticalLayout = new QVBoxLayout(ExpertForm);
+        verticalLayout->setObjectName("verticalLayout");
         expertInfoLabel = new QLabel(ExpertForm);
         expertInfoLabel->setObjectName("expertInfoLabel");
-        expertInfoLabel->setGeometry(QRect(250, 70, 191, 31));
+
+        verticalLayout->addWidget(expertInfoLabel);
+
+        lotTable = new QTableView(ExpertForm);
+        lotTable->setObjectName("lotTable");
+
+        verticalLayout->addWidget(lotTable);
+
+        addAppraisalButton = new QPushButton(ExpertForm);
+        addAppraisalButton->setObjectName("addAppraisalButton");
+
+        verticalLayout->addWidget(addAppraisalButton);
+
         logOutButton = new QPushButton(ExpertForm);
         logOutButton->setObjectName("logOutButton");
-        logOutButton->setGeometry(QRect(190, 340, 80, 24));
+
+        verticalLayout->addWidget(logOutButton);
+
 
         retranslateUi(ExpertForm);
 
@@ -44,6 +66,7 @@ public:
     {
         ExpertForm->setWindowTitle(QCoreApplication::translate("ExpertForm", "Form", nullptr));
         expertInfoLabel->setText(QCoreApplication::translate("ExpertForm", "TextLabel", nullptr));
+        addAppraisalButton->setText(QCoreApplication::translate("ExpertForm", "Add Appraisal", nullptr));
         logOutButton->setText(QCoreApplication::translate("ExpertForm", "Log out", nullptr));
     } // retranslateUi
 

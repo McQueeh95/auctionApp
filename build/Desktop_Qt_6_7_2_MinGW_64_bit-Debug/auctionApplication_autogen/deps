@@ -561,6 +561,8 @@ auctionApplication_autogen/timestamp: \
 	C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
 	C:/Qt-framework/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
 	C:/Users/nezna/QtProjects/auctionApplication/CMakeLists.txt \
+	C:/Users/nezna/QtProjects/auctionApplication/addappraisalform.cpp \
+	C:/Users/nezna/QtProjects/auctionApplication/addappraisalform.h \
 	C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.h \
 	C:/Users/nezna/QtProjects/auctionApplication/admin.cpp \
@@ -614,6 +616,7 @@ auctionApplication_autogen/timestamp: \
 	C:/Users/nezna/QtProjects/auctionApplication/widget.cpp \
 	C:/Users/nezna/QtProjects/auctionApplication/widget.h \
 	C:/Users/nezna/QtProjects/auctionApplication/windowcontroller.h \
+	C:/Users/nezna/QtProjects/auctionApplication/addappraisalform.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/addlotdialog.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/expertform.ui \
 	C:/Users/nezna/QtProjects/auctionApplication/form.ui \

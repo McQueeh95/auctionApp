@@ -17,10 +17,13 @@ public:
     Expert getExpert() const;
     void setExpert(const Expert &expert);
     void setExpertInfo();
+    void createModel();
     ~ExpertForm();
 
 private slots:
     void on_logOutButton_clicked();
+    void on_addAppraisalButton_clicked();
+    void refreshSignal();
 
 private:
     Ui::ExpertForm *ui;

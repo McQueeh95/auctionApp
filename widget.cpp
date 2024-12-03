@@ -71,6 +71,7 @@ void Widget::on_loginButton_clicked()
         expertWindow->setExpertInfo();
         expertWindow->setAttribute(Qt::WA_DeleteOnClose);
         expertWindow->show();
+        expertWindow->createModel();
         this->clearLineEdit();
         WindowContoller::instance().hideMain();
     }

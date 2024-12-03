@@ -50,6 +50,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         auctiontablemodel.h auctiontablemodel.cpp
         expert.h expert.cpp
         expertform.h expertform.cpp expertform.ui
+        addappraisalform.h addappraisalform.cpp addappraisalform.ui
 
     )
 # Define target properties for Android with Qt 6 as:

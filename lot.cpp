@@ -2,6 +2,10 @@
 
 Lot::Lot() {}
 
+int Lot::getId()const{
+    return lotId;
+}
+
 QString Lot::getName() const
 {
     return name;
@@ -29,7 +33,13 @@ int Lot::getSellerId() const{
 }
 
 Lot::Lot(QString name, int year, QString type, float desirePrice, QString description, int sellerId):
-    name{name}, year{year}, type{type}, desirePrice(desirePrice), description{description}, sellerId(sellerId)
+    name{name}, year{year}, type{type}, desirePrice{desirePrice}, description{description}, sellerId(sellerId)
+{
+
+}
+
+Lot::Lot(QString name, int year, QString type, QString description, int sellerId):
+    name{name}, year{year}, type{type}, desirePrice{0}, description{description}, sellerId{sellerId}
 {
 
 }

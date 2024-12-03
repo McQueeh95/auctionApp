@@ -3,7 +3,7 @@
 lotTableModel::lotTableModel(const QVector<Lot> &lots, QObject *parent)
     : QAbstractTableModel{parent}, mLots{lots}
 {
-    qDebug() << "LotTableModel COnstructor";
+    qDebug() << "LotTableModel Constructor";
     for(const auto& l: lots){
         qDebug() << l.getName();
     }
@@ -19,7 +19,9 @@ int lotTableModel::rowCount(const QModelIndex &parent) const
 
 int lotTableModel::columnCount(const QModelIndex &parent) const
 {
-    if(!parent.isValid())
+    if(!parent.isValid() && mLots.at(0).getDesirePrice() == 0)
+        return 4;
+    else if(!parent.isValid())
         return 5;
     return 0;
 }
@@ -33,20 +35,13 @@ QVariant lotTableModel::data(const QModelIndex &index, int role) const
         if(index.column() == 1)
             return lot.getYear();
         if(index.column() == 2)
-            return lot.getDesirePrice();
-        if(index.column() == 3){
             return lot.getType();
-            /*QList<std::pair<int, QString>> types = UiQuery::getLotTypes();
-            auto it = std::find_if(types.begin(), types.end(), [typeId = lot.getType()](const std::pair<int, QString>& type){
-                return type.first == typeId;
-            });
-            if(it != types.end()){
-                    return it->second;
-                }
-            return QVariant();*/
-        }
-        if(index.column() == 4)
-            return mLots.at(index.row()).getDescription();
+        if(index.column() == 3)
+            return lot.getDescription();
+        if(index.column() == 4 && lot.getDesirePrice()>0)
+            return lot.getDesirePrice();
+        else
+            return "Add Appraisal";
     }
     return QVariant();
 }
@@ -62,13 +57,13 @@ QVariant lotTableModel::headerData(int section, Qt::Orientation orientation, int
             return "Year";
             break;
         case 2:
-            return "Desire Price";
-            break;
-        case 3:
             return "Type";
             break;
-        case 4:
+        case 3:
             return "Description";
+            break;
+        case 4:
+            return "Desire Price";
             break;
             return "";
         }

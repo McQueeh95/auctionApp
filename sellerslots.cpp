@@ -46,8 +46,17 @@ void SellersLots::createModel(){
 
 void SellersLots::createModelAuctions(const Auction &auction){
     QVector<Lot> lots{LotQuery::getLotsAuctionQuery(auction)};
-    model = new lotTableModel(LotQuery::getLotsAuctionQuery(auction), this);
+    model = new lotTableModel(lots, this);
     QString info = "Auction time: " + auction.getStartTime() + " - " + auction.getEndTime() + " \nAnnouncer: " + auction.getAnnouncer();
+    ui->infoLabel->setText(info);
+    ui->tableView->setModel(model);
+}
+
+void SellersLots::createModelExpert()
+{
+    QVector<Lot> lots{LotQuery::getLotsForAppraisal()};
+    model = new lotTableModel(lots, this);
+    QString info = "Please select Lot to add an appraisal ";
     ui->infoLabel->setText(info);
     ui->tableView->setModel(model);
 }
